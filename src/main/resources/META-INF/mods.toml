@@ -67,11 +67,3 @@ mandatory = true
 versionRange = "[5.0.0,)"
 ordering = "AFTER"
 side = "BOTH"
-
-
-[[dependencies."${mod_id}"]]
-modId = "sodiumdynamiclights"
-mandatory = true
-versionRange = "*"
-ordering = "NONE"
-side = "CLIENT"
