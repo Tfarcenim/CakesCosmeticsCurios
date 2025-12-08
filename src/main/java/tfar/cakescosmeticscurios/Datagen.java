@@ -1,5 +1,6 @@
 package tfar.cakescosmeticscurios;
 
+import net.loworbitstation.cakescosmetics.item.ModItems;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.DataGenerator;
@@ -39,6 +40,7 @@ public class Datagen {
 
         @Override
         protected void addTags(HolderLookup.Provider provider) {
+            tag(ModTags.HEAD).add(ModItems.CAPTAINS_HAT.get(),ModItems.CHRISTMAS_HAT.get());
         }
     }
 
@@ -97,6 +99,9 @@ public class Datagen {
 
         @Override
         public void generate(HolderLookup.Provider registries, ExistingFileHelper fileHelper) {
+            this.createEntities("entity_slots")
+                    .addPlayer()
+                    .addSlots("head");
 
         }
     }
