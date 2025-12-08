@@ -25,8 +25,6 @@ public class CakesCosmeticsCurios {
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {
-        CuriosApi.registerCurio(ModItems.CAPTAINS_HAT.get(), new CakesCosmeticsCurio());
-        CuriosApi.registerCurio(ModItems.CHRISTMAS_HAT.get(), new CakesCosmeticsCurio());
+        CuriosItems.HEAD_ITEMS.forEach(vanityArmorItem -> CuriosApi.registerCurio(vanityArmorItem,new CakesCosmeticsCurio()));
     }
-
 }

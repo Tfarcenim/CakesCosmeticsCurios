@@ -1,6 +1,7 @@
 package tfar.cakescosmeticscurios;
 
 import net.loworbitstation.cakescosmetics.item.ModItems;
+import net.loworbitstation.cakescosmetics.item.VanityArmorItem;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.DataGenerator;
@@ -40,7 +41,7 @@ public class Datagen {
 
         @Override
         protected void addTags(HolderLookup.Provider provider) {
-            tag(ModTags.HEAD).add(ModItems.CAPTAINS_HAT.get(),ModItems.CHRISTMAS_HAT.get());
+            tag(ModTags.HEAD).add(CuriosItems.HEAD_ITEMS.toArray(new VanityArmorItem[0]));
         }
     }
 

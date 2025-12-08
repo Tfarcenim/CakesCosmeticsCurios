@@ -19,25 +19,23 @@ import top.theillusivec4.curios.api.client.ICurioRenderer;
 
 public class CakesCosmeticCurioRenderer implements ICurioRenderer {
     private GeoArmorRenderer<?> renderer;
+    ResourceLocation texture;
+
+    public CakesCosmeticCurioRenderer(GeoArmorRenderer<?> renderer) {
+        this.renderer = renderer;
+        texture = renderer.getGeoModel().getTextureResource(null);
+    }
 
     @Override
     public <T extends LivingEntity, M extends EntityModel<T>> void render(ItemStack stack, SlotContext slotContext, PoseStack matrixStack,
                                                                           RenderLayerParent<T, M> renderLayerParent, MultiBufferSource renderTypeBuffer,
                                                                           int light, float limbSwing, float limbSwingAmount, float partialTicks,
                                                                           float ageInTicks, float netHeadYaw, float headPitch) {
-        if (this.renderer == null) {
-            this.renderer = new ChristmasHatRenderer();
-        }
 
         M model = renderLayerParent.getModel();
         if (model instanceof HumanoidModel<?> humanoidModel) {
-            VertexConsumer vertexconsumer = renderTypeBuffer.getBuffer(RenderType.armorCutoutNoCull(new ResourceLocation("cakescosmetics",
-                    "models/armor/christmas_hat.png")));
-
-            // This prepares our GeoArmorRenderer for the current render frame.
-            // These parameters may be null however, so we don't do anything further with them
+            VertexConsumer vertexconsumer = renderTypeBuffer.getBuffer(RenderType.armorCutoutNoCull(texture));
             this.renderer.prepForRender(slotContext.entity(), stack, EquipmentSlot.HEAD, humanoidModel);
-
             renderer.renderToBuffer(matrixStack, vertexconsumer, light, OverlayTexture.NO_OVERLAY, 1, 1, 1, 1);
         }
     }
