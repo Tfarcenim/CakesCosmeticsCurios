@@ -19,8 +19,8 @@ public class ClientEvents {
     @SubscribeEvent
     public static void clientSetup(final FMLClientSetupEvent evt) {
 
-        for (VanityArmorItem vanityArmorItem : CuriosItems.HEAD_ITEMS) {
-            CuriosRendererRegistry.register(vanityArmorItem, () -> new CakesCosmeticCurioRenderer(getGeoRenderer(vanityArmorItem)));
+        for (VanityArmorItem vanityArmorItem : CuriosItems.ALL_ITEMS) {
+            CuriosRendererRegistry.register(vanityArmorItem, () -> new CakesCosmeticCurioRenderer(vanityArmorItem));
         }
     }
 

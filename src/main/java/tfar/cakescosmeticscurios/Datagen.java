@@ -42,6 +42,9 @@ public class Datagen {
         @Override
         protected void addTags(HolderLookup.Provider provider) {
             tag(ModTags.HEAD).add(CuriosItems.HEAD_ITEMS.toArray(new VanityArmorItem[0]));
+            tag(ModTags.BACK).add(CuriosItems.BACK_ITEMS.toArray(new VanityArmorItem[0]));
+            tag(ModTags.BELT).add(CuriosItems.BELT_ITEMS.toArray(new VanityArmorItem[0]));
+            tag(ModTags.FEET).add(CuriosItems.FEET_ITEMS.toArray(new VanityArmorItem[0]));
         }
     }
 
@@ -89,6 +92,7 @@ public class Datagen {
 
         @Override
         protected void addTranslations() {
+            add("curios.identifier.feet","Feet");
         }
     }
 
@@ -100,9 +104,10 @@ public class Datagen {
 
         @Override
         public void generate(HolderLookup.Provider registries, ExistingFileHelper fileHelper) {
+            createSlot("feet");
             this.createEntities("entity_slots")
                     .addPlayer()
-                    .addSlots("head");
+                    .addSlots("head","back","belt","feet");
 
         }
     }

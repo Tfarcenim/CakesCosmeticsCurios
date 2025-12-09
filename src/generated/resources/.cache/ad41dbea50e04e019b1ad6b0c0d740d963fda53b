@@ -1,2 +1,5 @@
-// 1.20.1	2025-12-08T17:21:55.0344656	Tags for minecraft:item mod id cakescosmeticscurios
-177c1071bf952d13803a1bf52ffe7b311c0e3d55 data/curios/tags/items/head.json
+// 1.20.1	2025-12-08T18:01:13.6618267	Tags for minecraft:item mod id cakescosmeticscurios
+9ff3f5633be6e863ca6a6f70fead1bd94f09fef0 data/curios/tags/items/back.json
+59fcb64c41b99f703c56e59ec6f6109c5947f2be data/curios/tags/items/belt.json
+e6d84ef7e357b9819bff37e651a810daafab786b data/curios/tags/items/feet.json
+107f61c4b9e421bbf77b038260b0b077ec43f900 data/curios/tags/items/head.json
